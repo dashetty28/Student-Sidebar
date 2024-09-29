@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "My Sidebar Extension",
+  "version": "1.0",
+  "description": "A sidebar extension to help students.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon128.png",
+      "48": "icons/icon128.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon128.png",
+    "48": "icons/icon128.png",
+    "128": "icons/icon128.png"
+  },
+  "_content_scripts": [
+    {
+    "matches": ["<all_urls>"],
+    "js": ["popup.js", "timer_page.js", "calculator.js", "notes.js"],
+    "css": ["style.css", "timer_page.css", "calculator.css", "notes.css"]
+    }
+],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js", "timer_page.js", "calculator.js", "notes.js"],
+      "css": ["style.css", "timer_page.css", "calculator.css", "notes.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["timer_page.html", "timer_page.js", "timer_page.css", "calculator.html", "calculator.js", "calculator.css", "notes.html",
+                  "notes.js", "notes.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

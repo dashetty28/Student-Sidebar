@@ -1,0 +1,55 @@
+embed {
+  overflow: auto;
+}
+
+
+
+#my-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background-color: #f4f4f4;
+  z-index: 10000; /* Ensure the sidebar is on top */
+  overflow: auto; /* Ensure content within the sidebar can be scrolled if necessary */
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+  transform: translateX(-500px); /* Initially hidden */
+}
+
+/* Style adjustments for the main content */
+body.sidebar-visible #my-sidebar {
+  transform: translateX(0); /* Slide in the sidebar */
+}
+
+
+body.sidebar-visible {
+  overflow-x: auto; /* Prevent horizontal scrolling */
+  height: 100vh;
+}
+
+body.sidebar-visible * {
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+body.sidebar-visible > *:not(#my-sidebar) {
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+  position: relative;
+  transform: translateX(500px);
+  /* width: calc(100% - 500); */
+}
+
+#my-sidebar button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#my-sidebar button:hover {
+  background-color: #0056b3;
+}

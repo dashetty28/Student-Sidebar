@@ -1,0 +1,132 @@
+#timer-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100%; /* Set maximum width to match the container */
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+#timer-settings label, 
+#timer-settings input, 
+#timer-settings button {
+    margin-right: 10px;
+}
+
+#timer-settings input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 50px;
+}
+
+#timer-settings button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#timer-settings button:hover {
+    background-color: #0056b3;
+}
+
+
+#timer-settings * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    top: -10px;
+}
+
+.circle-container {
+    width: 400px;
+    height: 400px;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.semicircle {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: right center;
+}
+
+.semicircle:nth-child(1){
+    background-color: #088b8b;
+    z-index: 2;
+}
+
+.semicircle:nth-child(2){
+    background-color: #088b8b;
+    z-index: 3;
+}
+
+.semicircle:nth-child(3){
+    background-color: #ddd;
+    z-index: 4;
+    /* display: none; */
+}
+
+.outermost-circle {
+    width: 390px;
+    height: 390px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+
+.timer-container{
+    width: 330px;
+    height: 200px;
+    z-index: 6;
+}
+
+.timer{
+    width: 400px;
+    height: 100px;
+    z-index: 7;
+}
+
+.timer div{
+    font-size: 70px;
+    font-weight: 100;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px
+}
+
+.timer .colon {
+    background-color: transparent;
+    width: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 15px;
+}
+
+
